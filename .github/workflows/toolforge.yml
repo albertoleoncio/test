@@ -3,7 +3,7 @@ name: Deploy via SSH
 on:
   push:
     branches:
-      - stable
+      - main
 
 jobs:
   deploy:
@@ -25,3 +25,4 @@ jobs:
           script: |
             become capx-backend
             whoami
+            echo $HOME
