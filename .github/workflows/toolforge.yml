@@ -26,3 +26,4 @@ jobs:
             become capx-backend
             whoami
             echo $HOME
+            ls -al
