@@ -23,7 +23,4 @@ jobs:
           port: ${{ secrets.PORT }}
           script_stop: true
           script: |
-            become capx-backend
-            whoami
-            echo $HOME
-            ls -al
+            become capx-backend bash -c 'ls -al'
