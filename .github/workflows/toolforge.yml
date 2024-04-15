@@ -23,4 +23,4 @@ jobs:
           port: ${{ secrets.PORT }}
           script_stop: true
           script: |
-            become capx-backend bash -c './run.sh'
+            become capx-backend bash -c 'webservice python3.11 shell -- webservice-python-bootstrap'
