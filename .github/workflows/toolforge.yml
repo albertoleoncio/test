@@ -24,7 +24,6 @@ jobs:
           request_pty: true
           script_stop: true
           script: |
-            become capx-backend bash -c 'git -C $HOME/www/python/src pull origin stable'
-            become capx-backend bash -c 'webservice python3.11 shell -- webservice-python-bootstrap'
-            become capx-backend bash -c 'webservice python3.11 shell -- $HOME/www/python/venv/bin/python $HOME/www/python/src/manage.py migrate'
-            become capx-backend bash -c 'webservice python3.11 shell -- $HOME/www/python/venv/bin/python $HOME/www/python/src/manage.py collectstatic --noinput'
+            become capx bash -c 'git -C $HOME/www/js pull origin main'
+            become capx bash -c 'webservice node18 -mem 2G -cpu 1 shell -- yarn --cwd $HOME/www/js install'
+            become capx bash -c 'webservice node18 -mem 2G -cpu 1 shell -- yarn --cwd $HOME/www/js build'
