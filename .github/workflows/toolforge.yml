@@ -21,7 +21,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          debug: true
+          request_pty: true
           script_stop: true
           script: |
             become capx-backend bash -c 'webservice python3.11 shell -- webservice-python-bootstrap'
